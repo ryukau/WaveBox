@@ -414,7 +414,8 @@ class PullDownMenu {
   }
 
   random() {
-    this.select.value = Math.floor(Math.random() * this.options.length)
+    var index = Math.floor(Math.random() * this.options.length)
+    this.select.value = this.options[index].value
   }
 
   add(label) {
@@ -423,7 +424,7 @@ class PullDownMenu {
     }
     var option = document.createElement('option')
     option.textContent = label
-    option.value = this.options.length
+    option.value = label
     if (this.options.length <= 0) {
       this.value = label
     }
